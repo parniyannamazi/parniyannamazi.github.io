@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- HOME — mirrors Rishi's structure: nav, centered hero, projects grid, footer. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parniyan Namazifard's Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="left"><a href="index.html">Parniyan Namazifard</a></div>
+    <div class="right">
+      <a href="index.html">Home</a>
+      <a href="experience.html">Experience</a>
+      <!-- EDIT: point at your resume PDF in assets/ -->
+      <a href="#" target="_blank" rel="noopener noreferrer">Resume</a>
+    </div>
+  </nav>
+
+  <!-- SECTION 1: Hero -->
+  <section class="hero-section">
+    <h2>
+      Hi! I'm Parniyan
+      <span class="external-links">
+        <a href="https://www.linkedin.com/in/parniyannamazifard" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/parniyannf" target="_blank"><i class="fa-brands fa-github"></i></a>
+      </span>
+    </h2>
+    <h3>Engineering Science Student at Simon Fraser University</h3>
+    <p>
+      I'm interested in electronics, embedded systems, optics, and hardware design.
+      Currently a Research Assistant at SFU's Quantum Internet Systems Lab, supporting
+      the development of an entangled photon source for free-space quantum communication.
+    </p>
+    <div class="links">
+      <a href="#projects">My projects</a>
+    </div>
+  </section>
+
+  <!-- SECTION 2: Projects -->
+  <section class="project-grid-section" id="projects">
+    <h2>Projects</h2>
+    <div class="grid-container">
+
+      <a href="projects/entangled-photon-source.html" class="project-link">
+        <div class="project-card">
+          <img src="assets/placeholder.svg" alt="Entangled Photon Source image">
+          <h3 class="project-title">Entangled Photon Source</h3>
+          <div class="project-skills">
+            <span class="skill">Optics</span><span class="skill">Python</span>
+            <span class="skill">Lab Hardware</span><span class="skill">Data Analysis</span>
+          </div>
+          <p class="project-description">Building and characterizing an entangled photon source for free-space quantum communication.</p>
+          <button class="read-more">Read more →</button>
+        </div>
+      </a>
+
+      <a href="projects/esp32-dev-board.html" class="project-link">
+        <div class="project-card">
+          <img src="assets/placeholder.svg" alt="Custom ESP32 Development Board image">
+          <h3 class="project-title">Custom ESP32 Development Board</h3>
+          <div class="project-skills">
+            <span class="skill">Altium Designer</span><span class="skill">PCB Design</span>
+            <span class="skill">USB-C</span><span class="skill">4-Layer Board</span>
+          </div>
+          <p class="project-description">A custom 4-layer ESP32 development board with USB-C.</p>
+          <button class="read-more">Read more →</button>
+        </div>
+      </a>
+
+      <a href="projects/hydroponic-system.html" class="project-link">
+        <div class="project-card">
+          <img src="assets/placeholder.svg" alt="Hydroponic Electrical System image">
+          <h3 class="project-title">Hydroponic Electrical System</h3>
+          <div class="project-skills">
+            <span class="skill">SolidWorks</span><span class="skill">Sensors</span>
+            <span class="skill">Microcontrollers</span><span class="skill">Enclosure Design</span>
+          </div>
+          <p class="project-description">Electronics and enclosure design for a hydroponic growing system.</p>
+          <button class="read-more">Read more →</button>
+        </div>
+      </a>
+
+      <a href="projects/facial-recognition-door.html" class="project-link">
+        <div class="project-card">
+          <img src="assets/placeholder.svg" alt="Raspberry Pi Facial Recognition Door image">
+          <h3 class="project-title">Raspberry Pi Facial Recognition Door</h3>
+          <div class="project-skills">
+            <span class="skill">Python</span><span class="skill">OpenCV</span>
+            <span class="skill">Raspberry Pi</span><span class="skill">Servo Control</span>
+          </div>
+          <p class="project-description">A facial-recognition door lock built on Raspberry Pi with servo control.</p>
+          <button class="read-more">Read more →</button>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="footer-nav">
+    <a href="index.html">Home</a>
+    <a href="experience.html">Experience</a>
+    <a href="#" target="_blank" rel="noopener noreferrer">Resume</a>
+  </div>
+  <p class="credit">© <span id="year"></span> Parniyan Namazifard</p>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
