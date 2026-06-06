@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automatic Plant Watering System — Parniyan Namazifard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="left"><a href="../index.html">Parniyan Namazifard</a></div>
+    <div class="right">
+      <a href="../index.html">Home</a>
+      <a href="../experience.html">Experience</a>
+      <a href="#" target="_blank" rel="noopener noreferrer">Resume</a>
+    </div>
+  </nav>
+
+  <!-- PROJECT DETAIL -->
+  <section class="project-detail">
+
+    <a href="../index.html#projects" class="back-link">← Back to projects</a>
+
+    <!-- EDIT: replace placeholder with your real banner image -->
+    <img class="banner" src="../assets/placeholder.svg" alt="Automatic Plant Watering System image">
+
+    <h1>Automatic Plant Watering System</h1>
+
+    <h2>Project Overview</h2>
+    <p>Developed an automated plant irrigation system that monitors soil and climate conditions and adjusts watering cycles to make plant care easier and more efficient.</p>
+
+    <h2>Skills Used</h2>
+    <div class="project-skills">
+      <span class="skill">Microcontrollers</span>
+      <span class="skill">Sensors</span>
+      <span class="skill">Embedded C</span>
+      <span class="skill">Sensor Feedback</span>
+      <span class="skill">Actuator Control</span>
+      <span class="skill">System Integration</span>
+    </div>
+
+    <h2>How It Works</h2>
+    <p>Sensors continuously read soil moisture and surrounding climate conditions. The controller compares those readings against target thresholds and decides when the plant actually needs water, instead of watering on a fixed timer. When it does water, indicator lights show the status, and the adaptive control loop means it only uses as much water as the plant needs.</p>
+
+    <h2>Main Features</h2>
+    <ul class="feature-list">
+      <li>Monitors soil moisture and climate conditions with live status updates.</li>
+      <li>Adjusts watering cycles automatically based on sensor feedback rather than a fixed schedule.</li>
+      <li>Indicator lights for real-time system status.</li>
+      <li>Reduced manual effort by 40% and water use by 15% through adaptive watering control.</li>
+    </ul>
+
+    <h2>Project Demo</h2>
+    <!-- EDIT: replace placeholder with your demo image -->
+    <img class="banner" src="../assets/placeholder.svg" alt="Automatic Plant Watering System demo">
+    <!-- EDIT: to embed a video, host it on Google Drive, paste the file ID, and uncomment:
+    <iframe src="https://drive.google.com/file/d/FILE_ID/preview" width="640" height="360" allow="autoplay" style="width:100%; aspect-ratio:16/9; border:1px solid var(--border-color); border-radius:8px;"></iframe>
+    -->
+
+  </section>
+
+  <!-- FOOTER -->
+  <div class="footer-nav">
+    <a href="../index.html">Home</a>
+    <a href="../experience.html">Experience</a>
+    <a href="#" target="_blank" rel="noopener noreferrer">Resume</a>
+  </div>
+  <p class="credit">© <span id="year"></span> Parniyan Namazifard</p>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!-- ELEVATOR CONTROL SYSTEM — project detail page. Short, Rishi-style layout. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elevator Control System on FPGA — Parniyan Namazifard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="left"><a href="../index.html">Parniyan Namazifard</a></div>
+    <div class="right">
+      <a href="../index.html">Home</a>
+      <a href="../experience.html">Experience</a>
+      <a href="#" target="_blank" rel="noopener noreferrer">Resume</a>
+    </div>
+  </nav>
+
+  <!-- PROJECT DETAIL -->
+  <section class="project-detail">
+
+    <a href="../index.html#projects" class="back-link">← Back to projects</a>
+
+    <!-- EDIT: replace with CoverImage.png once added to assets/ -->
+    <img class="banner" src="../assets/placeholder.svg" alt="Elevator Control System on FPGA image">
+
+    <h1>Elevator Control System on FPGA</h1>
+
+    <h2>Project Overview</h2>
+    <p>
+      Designed and implemented a complete digital elevator controller on a DE10-Standard FPGA
+      using VHDL, Quartus, and ModelSim. Simulates a six-floor elevator with request latching,
+      directional scheduling, timed movement, door operation, and an emergency stop.
+    </p>
+
+    <h2>Skills Used</h2>
+    <div class="project-skills">
+      <span class="skill">VHDL</span>
+      <span class="skill">FPGA Design</span>
+      <span class="skill">Quartus</span>
+      <span class="skill">ModelSim</span>
+      <span class="skill">Digital Logic Design</span>
+      <span class="skill">DE10-Standard</span>
+    </div>
+
+    <h2>How It Works</h2>
+    <p>
+      Floor requests are entered with switches SW0–SW5 and confirmed with a push button. A request
+      latch stores them until the elevator reaches that floor and finishes its door cycle. The
+      scheduler then decides the next target: when moving up it serves all requests above the
+      current floor first, when moving down it serves those below first, and when idle it picks the
+      nearest request. The controller FSM drives the whole sequence — moving one floor at a time on
+      a 1&nbsp;Hz clock, opening the door on arrival, then returning to idle or serving the next
+      request. Throughout, HEX0 shows the current floor, HEX1 shows the direction (or idle), and the
+      LEDs light to show the door open at the served floor.
+    </p>
+
+    <h2>Main Features</h2>
+    <ul class="feature-list">
+      <li>Modular VHDL design split into clock divider, request latch, scheduler, timer, controller FSM, and display driver, connected in a top-level module.</li>
+      <li>Direction-based scheduler that serves requests in the current direction of travel first, and picks the nearest requested floor when idle.</li>
+      <li>Moves one floor at a time on a 1&nbsp;Hz clock, showing the current floor on HEX0, direction/idle state on HEX1, and door status on the LEDs.</li>
+      <li>Emergency stop (SW9) that freezes all motion and door activity until cleared.</li>
+    </ul>
+
+    <h2>Project Demo</h2>
+    <!-- EDIT: replace placeholder with CoverImage.png -->
+    <img class="banner" src="../assets/placeholder.svg" alt="Elevator running on the FPGA board">
+    <!-- EDIT: host ElevatorDemo.mp4 on Google Drive, paste the file ID, and uncomment -->
+    <!--
+    <iframe src="https://drive.google.com/file/d/FILE_ID/preview" width="640" height="360" allow="autoplay" style="width:100%; aspect-ratio:16/9; border:1px solid var(--border-color); border-radius:8px;"></iframe>
+    -->
+
+  </section>
+
+  <!-- FOOTER -->
+  <div class="footer-nav">
+    <a href="../index.html">Home</a>
+    <a href="../experience.html">Experience</a>
+    <a href="#" target="_blank" rel="noopener noreferrer">Resume</a>
+  </div>
+  <p class="credit">© <span id="year"></span> Parniyan Namazifard</p>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
