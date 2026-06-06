@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elevator Control System on FPGA — Parniyan Namazifard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="left"><a href="../index.html">Parniyan Namazifard</a></div>
+    <div class="right">
+      <a href="../index.html">Home</a>
+      <a href="../experience.html">Experience</a>
+      <a href="#" target="_blank" rel="noopener noreferrer">Resume</a>
+    </div>
+  </nav>
+
+  <!-- PROJECT DETAIL -->
+  <section class="project-detail">
+
+    <a href="../index.html#projects" class="back-link">← Back to projects</a>
+
+    <!-- banner image -->
+    <img class="banner" src="../assets/elevator-cover.jpg" alt="Elevator Control System on FPGA image">
+
+    <h1>Elevator Control System on FPGA</h1>
+
+    <h2>Project Overview</h2>
+    <p>
+      Designed and implemented a complete digital elevator controller on a DE10-Standard FPGA using
+      VHDL, Quartus, and ModelSim. The project simulates a six-floor elevator system with request
+      latching, direction-based scheduling, timed floor-to-floor movement, door indication, idle
+      behavior, and an emergency stop mode.
+    </p>
+
+    <h2>Skills Used</h2>
+    <div class="project-skills">
+      <span class="skill">VHDL</span>
+      <span class="skill">FPGA Design</span>
+      <span class="skill">Quartus</span>
+      <span class="skill">ModelSim</span>
+    </div>
+
+    <h2>How It Works</h2>
+    <p>
+      Floor requests are entered using switches SW0–SW5, with each switch representing one floor from
+      0 to 5. When KEY0 is pressed, the active floor request is stored in the request latch. Requests
+      remain saved until the elevator reaches the selected floor and completes its door cycle.
+    </p>
+    <p>
+      The scheduler decides the next floor using a direction-based policy. When the elevator is moving
+      upward, it prioritizes requests above the current floor. When moving downward, it prioritizes
+      requests below the current floor. When idle, it selects the closest requested floor.
+    </p>
+    <p>
+      The controller FSM manages the full elevator sequence, including idle mode, upward movement,
+      downward movement, floor arrival, door opening, door closing, and emergency stop behavior.
+      Movement is controlled using a 1 Hz timing signal so the elevator visibly moves one floor at a
+      time on the FPGA board.
+    </p>
+    <p>
+      HEX0 displays the current floor number. HEX1 displays the elevator state: <strong>U</strong> for
+      moving up, <strong>d</strong> for moving down, and <strong>L</strong> for idle. LEDR0–LEDR5 act
+      as floor door indicators, turning on when the elevator door is open at the corresponding floor.
+    </p>
+
+    <h2>Main Features</h2>
+    <ul class="feature-list">
+      <li>Modular VHDL design separated into clock divider, request latch, scheduler, timer, controller FSM, display driver, and top-level system integration.</li>
+      <li>Six-floor elevator model using SW0–SW5 for floor requests and LEDR0–LEDR5 as door indicators.</li>
+      <li>Direction-based scheduler that serves requests in the current direction first and selects the nearest requested floor when idle.</li>
+      <li>1 Hz timing system for visible floor-to-floor movement, door timing, and display behavior.</li>
+      <li>HEX0 displays the current floor, while HEX1 displays elevator status using U, d, and L.</li>
+      <li>Emergency stop controlled by SW9, freezing elevator motion and door activity until the emergency condition is cleared.</li>
+      <li>Soft and hard reset behavior for clearing stored requests or resetting the full system.</li>
+    </ul>
+
+    <h2>Project Demo</h2>
+    <p>The elevator running on the DE10-Standard board — stepping floor by floor on HEX0, with the door indicator LEDs lighting at each served floor.</p>
+    <img class="banner" src="../assets/elevator-cover.jpg" alt="Elevator running on the FPGA board">
+    <video controls playsinline preload="metadata"
+           style="width:100%; max-width:360px; display:block; margin-top:16px; border:1px solid var(--border-color); border-radius:8px;">
+      <source src="../assets/elevator-demo.mp4" type="video/mp4">
+      Your browser doesn't support embedded video. <a href="../assets/elevator-demo.mp4">Download the demo</a>.
+    </video>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="footer-nav">
+    <a href="../index.html">Home</a>
+    <a href="../experience.html">Experience</a>
+    <a href="#" target="_blank" rel="noopener noreferrer">Resume</a>
+  </div>
+  <p class="credit">© <span id="year"></span> Parniyan Namazifard</p>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
