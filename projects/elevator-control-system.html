@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- ELEVATOR CONTROL SYSTEM — project detail page. Short, Rishi-style layout. -->
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -28,16 +27,17 @@
 
     <a href="../index.html#projects" class="back-link">← Back to projects</a>
 
-    <!-- EDIT: replace with CoverImage.png once added to assets/ -->
+    <!-- EDIT: replace placeholder with your real banner image -->
     <img class="banner" src="../assets/placeholder.svg" alt="Elevator Control System on FPGA image">
 
     <h1>Elevator Control System on FPGA</h1>
 
     <h2>Project Overview</h2>
     <p>
-      Designed and implemented a complete digital elevator controller on a DE10-Standard FPGA
-      using VHDL, Quartus, and ModelSim. Simulates a six-floor elevator with request latching,
-      directional scheduling, timed movement, door operation, and an emergency stop.
+      Designed and implemented a complete digital elevator controller on a DE10-Standard FPGA using
+      VHDL, Quartus, and ModelSim. The project simulates a six-floor elevator system with request
+      latching, direction-based scheduling, timed floor-to-floor movement, door indication, idle
+      behavior, and an emergency stop mode.
     </p>
 
     <h2>Skills Used</h2>
@@ -46,35 +46,46 @@
       <span class="skill">FPGA Design</span>
       <span class="skill">Quartus</span>
       <span class="skill">ModelSim</span>
-      <span class="skill">Digital Logic Design</span>
-      <span class="skill">DE10-Standard</span>
     </div>
 
     <h2>How It Works</h2>
     <p>
-      Floor requests are entered with switches SW0–SW5 and confirmed with a push button. A request
-      latch stores them until the elevator reaches that floor and finishes its door cycle. The
-      scheduler then decides the next target: when moving up it serves all requests above the
-      current floor first, when moving down it serves those below first, and when idle it picks the
-      nearest request. The controller FSM drives the whole sequence — moving one floor at a time on
-      a 1&nbsp;Hz clock, opening the door on arrival, then returning to idle or serving the next
-      request. Throughout, HEX0 shows the current floor, HEX1 shows the direction (or idle), and the
-      LEDs light to show the door open at the served floor.
+      Floor requests are entered using switches SW0–SW5, with each switch representing one floor from
+      0 to 5. When KEY0 is pressed, the active floor request is stored in the request latch. Requests
+      remain saved until the elevator reaches the selected floor and completes its door cycle.
+    </p>
+    <p>
+      The scheduler decides the next floor using a direction-based policy. When the elevator is moving
+      upward, it prioritizes requests above the current floor. When moving downward, it prioritizes
+      requests below the current floor. When idle, it selects the closest requested floor.
+    </p>
+    <p>
+      The controller FSM manages the full elevator sequence, including idle mode, upward movement,
+      downward movement, floor arrival, door opening, door closing, and emergency stop behavior.
+      Movement is controlled using a 1 Hz timing signal so the elevator visibly moves one floor at a
+      time on the FPGA board.
+    </p>
+    <p>
+      HEX0 displays the current floor number. HEX1 displays the elevator state: <strong>U</strong> for
+      moving up, <strong>d</strong> for moving down, and <strong>L</strong> for idle. LEDR0–LEDR5 act
+      as floor door indicators, turning on when the elevator door is open at the corresponding floor.
     </p>
 
     <h2>Main Features</h2>
     <ul class="feature-list">
-      <li>Modular VHDL design split into clock divider, request latch, scheduler, timer, controller FSM, and display driver, connected in a top-level module.</li>
-      <li>Direction-based scheduler that serves requests in the current direction of travel first, and picks the nearest requested floor when idle.</li>
-      <li>Moves one floor at a time on a 1&nbsp;Hz clock, showing the current floor on HEX0, direction/idle state on HEX1, and door status on the LEDs.</li>
-      <li>Emergency stop (SW9) that freezes all motion and door activity until cleared.</li>
+      <li>Modular VHDL design separated into clock divider, request latch, scheduler, timer, controller FSM, display driver, and top-level system integration.</li>
+      <li>Six-floor elevator model using SW0–SW5 for floor requests and LEDR0–LEDR5 as door indicators.</li>
+      <li>Direction-based scheduler that serves requests in the current direction first and selects the nearest requested floor when idle.</li>
+      <li>1 Hz timing system for visible floor-to-floor movement, door timing, and display behavior.</li>
+      <li>HEX0 displays the current floor, while HEX1 displays elevator status using U, d, and L.</li>
+      <li>Emergency stop controlled by SW9, freezing elevator motion and door activity until the emergency condition is cleared.</li>
+      <li>Soft and hard reset behavior for clearing stored requests or resetting the full system.</li>
     </ul>
 
     <h2>Project Demo</h2>
-    <!-- EDIT: replace placeholder with CoverImage.png -->
+    <!-- EDIT: replace placeholder with your demo image -->
     <img class="banner" src="../assets/placeholder.svg" alt="Elevator running on the FPGA board">
-    <!-- EDIT: host ElevatorDemo.mp4 on Google Drive, paste the file ID, and uncomment -->
-    <!--
+    <!-- EDIT: to embed a video, host it on Google Drive, paste the file ID, and uncomment:
     <iframe src="https://drive.google.com/file/d/FILE_ID/preview" width="640" height="360" allow="autoplay" style="width:100%; aspect-ratio:16/9; border:1px solid var(--border-color); border-radius:8px;"></iframe>
     -->
 
