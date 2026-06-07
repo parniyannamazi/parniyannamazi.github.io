@@ -31,9 +31,7 @@
     <img class="banner" src="../assets/placeholder.svg" alt="Automatic Door with Facial Recognition image">
 
     <h1>Automatic Door with Facial Recognition</h1>
-
-    <h2>Project Overview</h2>
-    <p>Collaborated in a team of 7 to design and build a Raspberry Pi–based keyless door system that uses OpenCV facial recognition to grant access.</p>
+    <p class="subtitle">ENSC 100/105W — Team LA08 (Theta): Daniel, Karan, Huy, Devon, Connor, Sean, Parniyan</p>
 
     <h2>Skills Used</h2>
     <div class="project-skills">
@@ -45,23 +43,76 @@
       <span class="skill">Sensor Integration</span>
     </div>
 
-    <h2>How It Works</h2>
-    <p>A camera feeds video into an OpenCV facial-recognition pipeline running on a Raspberry Pi. When it recognizes an authorized face, control logic in Python triggers a servo to unlock the door. The system also handles motion-activated lighting and a manual override, and multiple recognition models were tested to balance accuracy against speed.</p>
-
-    <h2>Main Features</h2>
+    <h2>Problem</h2>
     <ul class="feature-list">
-      <li>Raspberry Pi–based keyless entry using OpenCV facial recognition.</li>
-      <li>Python control logic for real-time access, motion-activated lighting, and manual override.</li>
-      <li>Tested multiple recognition models to optimize accuracy and speed.</li>
-      <li>Integrated sensors and calibrated servos through iterative debugging to improve reliability.</li>
+      <li>Traditional locks are hard for people with physical or cognitive challenges.</li>
+      <li>Managing keys is difficult when carrying heavy items.</li>
+    </ul>
+
+    <h2>Solution</h2>
+    <p>
+      A keyless, hands-free door system for secure and convenient access, designed for residential homes.
+    </p>
+
+    <h2>Functional Requirements</h2>
+    <ul class="feature-list">
+      <li>Facial recognition for access.</li>
+      <li>Automatic door locking/unlocking.</li>
+      <li>Emergency manual control.</li>
+      <li>Works in all lighting conditions.</li>
+    </ul>
+
+    <h2>Design Parameters</h2>
+    <ul class="feature-list">
+      <li>Motion sensor turns on the light.</li>
+      <li>Adjustable door timing.</li>
+      <li>Manual lock for emergencies.</li>
+    </ul>
+
+    <h2>Design</h2>
+    <ul class="feature-list">
+      <li>Facial recognition camera detects known faces.</li>
+      <li>Sends signal to lock and motor via Raspberry Pi.</li>
+      <li>The latch unlocks, motors open and close the door, and the latch locks again.</li>
+    </ul>
+
+    <h2>Software</h2>
+    <ul class="feature-list">
+      <li>Raspberry Pi 4</li>
+      <li>OpenCV Face Recognition</li>
+    </ul>
+
+    <h2>Challenges</h2>
+    <ul class="feature-list">
+      <li>Making facial recognition work in any light.</li>
+      <li>Difficulty in creating the door push mechanism.</li>
+      <li><strong>Budget:</strong> $209.12</li>
+    </ul>
+
+    <h2>Results</h2>
+    <p>
+      Successfully developed an automatic door system with facial recognition.
+    </p>
+
+    <h2>Constraints</h2>
+    <ul class="feature-list">
+      <li>Facial recognition may not work at some angles.</li>
+      <li>Too many wires.</li>
+      <li>Potential for fraud.</li>
+      <li>Doesn't work during a power outage.</li>
+    </ul>
+
+    <h2>Future Work</h2>
+    <ul class="feature-list">
+      <li>Motion light activates only in darkness.</li>
+      <li>Develop a more reliable locking system.</li>
+      <li>Use a standard door closer.</li>
+      <li>Upgrade software coding.</li>
     </ul>
 
     <h2>Project Demo</h2>
-    <!-- EDIT: replace placeholder with your demo image -->
-    <img class="banner" src="../assets/placeholder.svg" alt="Automatic Door with Facial Recognition demo">
-    <!-- EDIT: to embed a video, host it on Google Drive, paste the file ID, and uncomment:
-    <iframe src="https://drive.google.com/file/d/FILE_ID/preview" width="640" height="360" allow="autoplay" style="width:100%; aspect-ratio:16/9; border:1px solid var(--border-color); border-radius:8px;"></iframe>
-    -->
+    <!-- EDIT: replace placeholder with your demo image or video -->
+    <img class="banner" src="../assets/placeholder.svg" alt="Automatic door demo">
 
   </section>
 
